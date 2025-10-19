@@ -9,7 +9,6 @@ pub struct BodyProps {
 pub fn body(props: &BodyProps) -> Html {
     let BodyProps { dark_mode } = props;
 
-    // Define theme colors based on dark mode
     let (bg_gradient, text_color, card_bg, border_color) = if *dark_mode {
         (
             "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
