@@ -1,4 +1,5 @@
-pub(crate) mod body;
-pub(crate) mod footer;
-pub(crate) mod header;
-pub mod page;
+mod body;
+mod footer;
+mod header;
+mod hero;
+pub(crate) mod page;

@@ -1,15 +1,4 @@
-use yew::prelude::*;
-
-use my_site::components::page::Page;
-
-#[function_component]
-fn App() -> Html {
-    html!(
-        <div>
-            <Page/>
-        </div>
-    )
-}
+use my_site::app::App;
 
 fn main() {
     yew::Renderer::<App>::new().render();
