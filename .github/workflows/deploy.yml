@@ -12,7 +12,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -27,7 +26,7 @@ jobs:
           version: latest
 
       - name: Build
-        run: trunk build --release --public-url /${{ github.repository }}/
+        run: trunk build --release --public-url /hosting/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -37,11 +36,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
