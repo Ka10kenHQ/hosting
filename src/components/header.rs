@@ -10,18 +10,20 @@ pub fn header() -> Html {
     };
 
     let sidebar_class = if *collapsed {
-        "sidebar collapsed"
+        "header-sidebar sidebar-collapsed"
     } else {
-        "sidebar"
+        "header-sidebar"
     };
 
     html! {
         <>
-            <nav class={sidebar_class}>
-                <a href="#hero">{ "home" }</a>
-                <a href="#blogs">{ "blogs" }</a>
-            </nav>
-            <button onclick={toggle} class="sidebar-toggle">
+            <aside class={sidebar_class}>
+                <a class="header-sidebar__link" href="#hero">{ "Home" }</a>
+                <a class="header-sidebar__link" href="#projects">{ "Projects" }</a>
+                <a class="header-sidebar__link" href="#about">{ "About" }</a>
+                <a class="header-sidebar__link" href="#contact">{ "Contact" }</a>
+            </aside>
+            <button onclick={toggle} class="header-sidebar__toggle">
                 { if *collapsed { "→" } else { "←" } }
             </button>
         </>

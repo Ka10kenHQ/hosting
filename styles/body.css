@@ -1,0 +1,62 @@
+.body-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.body-section__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.body-section__text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.body-section__projects__grid,
+.body-section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+.vim-startup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    white-space: pre;
+    font-family: monospace;
+    font-size: 1rem;
+    line-height: 1.4;
+    background-color: #282828;
+    color: #ebdbb2;
+    padding: 40px;
+}
+
+.vim-startup pre {
+    margin: 0;
+    color: #fabd2f;
+}
+
+.vim-startup pre::first-line {
+    color: #fb4934; /* bright red */
+    font-weight: bold;
+}
+
+.vim-startup pre span {
+    color: #8ec07c;
+}
+
+.vim-startup pre {
+    display: inline-block;
+    text-align: left;
+}
