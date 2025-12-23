@@ -1,26 +1,18 @@
-use yew::{Callback, Html, function_component, html, use_state};
+use crate::components::{body::Body, sidebar::Sidebar};
+use yew::prelude::*;
 
-use crate::{
-    components::{body::Body, sidebar::Sidebar},
-    models::sidebar_tree::Node,
-};
+#[derive(Properties, PartialEq)]
+pub struct PageProps {
+    pub children: Children,
+}
 
-#[function_component]
-pub fn Page() -> Html {
-    let selected_node = use_state(|| None::<Node>);
-
-    let on_select_node = {
-        let selected_node = selected_node.clone();
-        Callback::from(move |node: Node| {
-            selected_node.set(Some(node));
-        })
-    };
-
+#[function_component(Page)]
+pub fn page(props: &PageProps) -> Html {
     html! {
         <div class="page-layout">
-            <Sidebar on_select={on_select_node.clone()} />
+            <Sidebar/>
             <div class="main-content">
-                <Body selected_node={(*selected_node).clone()} />
+                <Body children={props.children.clone()} />
             </div>
         </div>
     }

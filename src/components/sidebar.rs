@@ -2,11 +2,6 @@ use crate::models::sidebar_tree::*;
 use yew::events::KeyboardEvent;
 use yew::prelude::*;
 
-#[derive(Properties, PartialEq)]
-pub struct SidebarProps {
-    pub on_select: Callback<Node>,
-}
-
 fn file_icon_class(node: &Node) -> &'static str {
     match node {
         Node::Dir(_, _) => "devicon-folder-plain",
@@ -27,6 +22,25 @@ fn file_icon_class(node: &Node) -> &'static str {
                 "devicon-file-plain"
             }
         }
+    }
+}
+
+fn github_url(name: &str) -> Option<&'static str> {
+    match name {
+        "watchclean.tv.go" => Some("https://github.com/Ka10kenHQ/watchclean.tv"),
+        "jobless_ai.py" => Some("https://github.com/Ka10kenHQ/Jobless-AI"),
+        "OnlyVim.lua" => Some("https://github.com/Ka10kenHQ/OnlyVim"),
+        "ragtrace.ipynb" => Some("https://github.com/Ka10ken1/RAGTrace"),
+        _ => None,
+    }
+}
+
+fn markdown_page(name: &str) -> Option<&'static str> {
+    match name {
+        "blog1.md" => Some("/blog/blog1"),
+        "blog2.md" => Some("/blog/blog2"),
+        "README.md" => Some("/about"),
+        _ => None,
     }
 }
 
@@ -55,7 +69,6 @@ fn handle_keydown(
     selected_index: &UseStateHandle<usize>,
     nodes: &UseStateHandle<Vec<Node>>,
     current_path: &UseStateHandle<Vec<Node>>,
-    on_select: Callback<Node>, // <-- new
 ) {
     let max_index = nodes.len().saturating_sub(1);
 
@@ -63,12 +76,8 @@ fn handle_keydown(
         "j" => selected_index.set((**selected_index + 1).min(max_index)),
         "k" => selected_index.set((**selected_index).saturating_sub(1)),
         "Enter" => {
-            let onclick = make_onclick_callback(
-                selected_index.clone(),
-                nodes.clone(),
-                current_path.clone(),
-                on_select,
-            );
+            let onclick =
+                make_onclick_callback(selected_index.clone(), nodes.clone(), current_path.clone());
             onclick.emit(**selected_index);
         }
         _ => {}
@@ -79,21 +88,15 @@ fn make_onclick_callback(
     selected_index: UseStateHandle<usize>,
     nodes: UseStateHandle<Vec<Node>>,
     current_path: UseStateHandle<Vec<Node>>,
-    on_select: Callback<Node>,
 ) -> Callback<usize> {
     Callback::from(move |index: usize| {
         selected_index.set(index);
         let node = &nodes[index];
 
-        // Only notify parent if it's not "../" or directory
-        if matches!(node, Node::File(name) if name != "../" && name != "./") {
-            on_select.emit(node.clone());
-        }
-
         match node {
             Node::File(name) if name == "../" => {
                 let mut stack = (*current_path).clone();
-                stack.pop(); // remove current folder
+                stack.pop();
 
                 let parent_nodes = if stack.is_empty() {
                     root_nodes()
@@ -110,19 +113,28 @@ fn make_onclick_callback(
                 current_path.set(stack);
                 nodes.set(node.get_children());
             }
-            Node::File(_) => {
-                web_sys::console::log_1(&format!("Open file: {}", node.name()).into());
+            Node::File(name) => {
+                if let Some(url) = github_url(name) {
+                    if let Some(win) = web_sys::window() {
+                        let _ = win.location().set_href(url);
+                    }
+                } else if let Some(page) = markdown_page(name) {
+                    if let Some(win) = web_sys::window() {
+                        let _ = win.location().set_href(page);
+                    }
+                } else {
+                    web_sys::console::log_1(&format!("File selected: {}", name).into());
+                }
             }
         }
     })
 }
 
 #[function_component(Sidebar)]
-pub fn sidebar(props: &SidebarProps) -> Html {
+pub fn sidebar() -> Html {
     let nodes = use_state(|| root_nodes());
     let selected_index = use_state(|| 0);
     let current_path = use_state(|| vec![]);
-    let on_select_clone = props.on_select.clone();
 
     let on_keydown = {
         let selected_index_clone = selected_index.clone();
@@ -130,22 +142,12 @@ pub fn sidebar(props: &SidebarProps) -> Html {
         let current_path_clone = current_path.clone();
 
         Callback::from(move |e: KeyboardEvent| {
-            handle_keydown(
-                e,
-                &selected_index_clone,
-                &nodes_clone,
-                &current_path_clone,
-                on_select_clone.clone(),
-            )
+            handle_keydown(e, &selected_index_clone, &nodes_clone, &current_path_clone)
         })
     };
 
-    let onclick_item = make_onclick_callback(
-        selected_index.clone(),
-        nodes.clone(),
-        current_path.clone(),
-        props.on_select.clone(),
-    );
+    let onclick_item =
+        make_onclick_callback(selected_index.clone(), nodes.clone(), current_path.clone());
 
     html! {
         <aside class="sidebar" tabindex="0" onkeydown={on_keydown}>
