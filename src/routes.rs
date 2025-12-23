@@ -5,12 +5,12 @@ use yew_router::Routable;
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
-    #[at("/")]
+    #[at("/hosting/")]
     Home,
-    #[at("/blog/:id")]
+    #[at("/hosting/blog/:id")]
     Blog { id: String },
     #[not_found]
-    #[at("/404")]
+    #[at("/hosting/404")]
     NotFound,
 }
 

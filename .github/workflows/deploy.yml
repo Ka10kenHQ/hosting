@@ -26,7 +26,7 @@ jobs:
           version: latest
 
       - name: Build
-        run: trunk build --release --public-url /
+        run: trunk build --release --public-url /hosting/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
