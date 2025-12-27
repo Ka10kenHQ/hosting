@@ -5,7 +5,6 @@ pub fn readme() -> Html {
     html! {
         <div class="readme-container">
             <h1>{"Mate Kopaliani"}</h1>
-            <p class="subtitle">{"Software Engineer | CS Student"}</p>
 
             <div class="cards-grid">
                 <div class="info-card">
@@ -23,25 +22,17 @@ pub fn readme() -> Html {
 
                 <div class="info-card">
                     <h2>{" Education"}</h2>
-                    <h3>{"Bachelor's in Computer Science"}</h3>
-                    <p>{"Minor in Mathematics"}</p>
+                    <h4>{"Bachelor's in Computer Science with Minor in Mathematics"}</h4>
                     <p>
+                        {"I am in my 4th year of CS/Math degree with "}
                         {"Current Cummulative Gpa"}
                         <br/>
-                        <strong>{"GPA: 3.5"}</strong>
+                        <strong>{"GPA: 3.5/4.0"}</strong>
+                        <br/>
+                        {"Average Grade:"}
+                        <br/>
+                        <strong> {"92/100"}</strong>
                     </p>
-                </div>
-
-                <div class="info-card">
-                    <h2>{" Tech Stack"}</h2>
-                    <div class="tech-badges">
-                        <span class="badge">{"Go"}</span>
-                        <span class="badge">{"C#"}</span>
-                        <span class="badge">{"Rust"}</span>
-                        <span class="badge">{"Python"}</span>
-                        <span class="badge">{"Java"}</span>
-                        <span class="badge">{"Lua"}</span>
-                    </div>
                 </div>
 
                 <div class="info-card work-experience-card">
@@ -50,12 +41,10 @@ pub fn readme() -> Html {
                         <h3>{"Back-End Software Engineer"}</h3>
                         <p>
                             <a href="https://www.cvcertified.com/" target="_blank">
-                                {"CVCertified"}
+                                {"Collision Vision"}
                             </a>
-                            {" (Current) - Developing scalable back-end systems and RESTful APIs \
-                             for enterprise applications. Working with microservices architecture, \
-                             database optimization, implementing robust authentication and authorization \
-                             systems, and ensuring high performance and reliability."}
+                            {" (Current) - developing scalable back-end systems \
+                             for enterprise application. working with .NET, azure, python"}
                         </p>
                     </div>
                     <div class="experience-item">
@@ -64,16 +53,16 @@ pub fn readme() -> Html {
                             <a href="https://api24.ge/home" target="_blank">
                                 {"API24"}
                             </a>
-                            {" - Built and maintained server-side applications, designed database schemas, \
-                             and integrated third-party services. Gained experience in API design patterns \
-                             and cloud deployment practices."}
+                            {" - Built and maintained back-end primarily focused on document processing with OCR,
+                            pattern recognition and translation
+                            "}
                         </p>
                     </div>
                     <div class="experience-item">
                         <h3>{"Student Tutor of Linear Algebra"}</h3>
                         <p>
                             {"KIU University - Tutored undergraduate students in Linear Algebra, \
-                             helping them understand complex mathematical concepts including vector spaces, \
+                             helping them understand mathematical concepts including vector spaces, \
                              matrix operations, eigenvalues, and linear transformations."}
                         </p>
                     </div>
