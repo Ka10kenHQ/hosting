@@ -7,7 +7,7 @@ pub fn ragtrace() -> Html {
         <ProjectPage
             title="RAGTrace"
             tagline="Visualization and diagnostic platform for RAG systems"
-            description="Understand and refine retrieval-generation dynamics in RAG systems. Visualize how your RAG pipeline processes queries, retrieves context, and generates responses with interactive diagnostics."
+            description="Understand and refine retrieval-generation dynamics in RAG systems. Visualize how your different RAG approaches processes and handles queries by detecting plagiarisms in code blocks"
             tools={vec![
                 "Python".to_string(),
                 "Jupyter".to_string(),
@@ -19,9 +19,9 @@ pub fn ragtrace() -> Html {
                 "Gemini SDK".to_string()
             ]}
             features={vec![
+                "Code plagiarism Detector".to_string(),
                 "Question analysis".to_string(),
-                "Answer tracing & evidence analysis".to_string(),
-                "Interactive prompt builder".to_string(),
+                "Answer tracing & evidence analysis".to_string()
             ]}
             github_url="https://github.com/Ka10ken1/RAGTrace"
             images={vec![
