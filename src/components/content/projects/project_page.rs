@@ -5,7 +5,7 @@ pub struct ProjectPageProps {
     pub title: String,
     pub tagline: String,
     pub description: String,
-    pub tech_stack: Vec<String>,
+    pub tools: Vec<String>,
     pub features: Vec<String>,
     pub github_url: String,
 
@@ -45,9 +45,9 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
             <section class="project-section">
                 <p class="project-description">{&props.description}</p>
                 <div class="tech-stack">
-                    <h3>{"Tech Stack"}</h3>
+                    <h3>{"Tools"}</h3>
                     <div class="tech-badges">
-                        {props.tech_stack.iter().map(|tech| {
+                        {props.tools.iter().map(|tech| {
                             html! {
                                 <span class="tech-badge">{tech}</span>
                             }
@@ -55,6 +55,7 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
                     </div>
                 </div>
             </section>
+
             <section class="project-section">
                 <h3>{"Features"}</h3>
                 <ul class="feature-list">

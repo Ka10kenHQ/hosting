@@ -8,10 +8,9 @@ pub fn only_vim() -> Html {
             title="OnlyVim"
             tagline="Minimal, sane, and ready-to-hack Neovim distribution"
             description="A lightweight Neovim distribution to help more people get into Neovim without the usual pain. Designed to be minimal, easy to customize, and beginner-friendly while maintaining the power of Vim."
-            tech_stack={vec![
+            tools={vec![
                 "Lua".to_string(),
-                "Neovim".to_string(),
-                "Vim Script".to_string(),
+                "Neovim".to_string()
             ]}
             features={vec![
                 "Minimal and lightweight".to_string(),
@@ -20,6 +19,9 @@ pub fn only_vim() -> Html {
                 "Sane defaults out of the box".to_string(),
             ]}
             github_url="https://github.com/Ka10kenHQ/OnlyVim"
+            images={vec![
+                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/onlyvim.png".to_string(),
+            ]}
         />
     }
 }

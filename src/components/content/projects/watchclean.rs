@@ -9,7 +9,7 @@ pub fn watchclean() -> Html {
             title="watchclean.tv"
             tagline="Ad-free blazingly fast local media collection manager"
             description="Watch your local movie and TV series collection without ads or streaming services. Built for speed and simplicity, it organizes your media library and provides a clean interface to browse and watch your content."
-            tech_stack={vec![
+            tools={vec![
                 "Go".to_string(),
                 "Local Media Management".to_string(),
                 "Ad-free Experience".to_string(),
@@ -21,6 +21,9 @@ pub fn watchclean() -> Html {
                 "Clean, intuitive interface".to_string(),
             ]}
             github_url="https://github.com/Ka10kenHQ/watchclean.tv"
+            images={vec![
+                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/series.jpg".to_string(),
+            ]}
         />
     }
 }
