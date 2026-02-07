@@ -1,8 +1,8 @@
 use crate::components::{
     content::{
         projects::{
-            jobless_ai::JoblessAi, llm_debate::LlmDebate, only_vim::OnlyVim, ragtrace::Ragtrace,
-            watchclean::Watchclean,
+            floating_point_unit::FloatingPointUnit, jobless_ai::JoblessAi, llm_debate::LlmDebate,
+            only_vim::OnlyVim, ragtrace::Ragtrace, watchclean::Watchclean,
         },
         readme::Readme,
     },
@@ -36,6 +36,7 @@ pub fn switch(route: Route) -> Html {
             "only_vim" => html! { <Page> <OnlyVim /> </Page> },
             "ragtrace" => html! { <Page> <Ragtrace /> </Page> },
             "llm_debate" => html! { <Page> <LlmDebate /> </Page> },
+            "floating_point_unit" => html! { <Page> <FloatingPointUnit/> </Page> },
             _ => html! { <div><h1>{ format!("Project: {}", name) }</h1></div> },
         },
         Route::NotFound => html! { <div><h1>{ "404 Not Found" }</h1></div> },

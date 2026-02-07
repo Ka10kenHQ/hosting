@@ -21,6 +21,8 @@ fn file_icon_class(node: &Node) -> &'static str {
                 "devicon-markdown-plain colored"
             } else if name.ends_with(".ipynb") {
                 "devicon-jupyter-plain colored"
+            } else if name.ends_with(".sv") {
+                "devicon-verilog-plain colored"
             } else {
                 "devicon-file-plain"
             }
@@ -57,6 +59,9 @@ fn project_page(name: &str) -> Option<Route> {
         }),
         "llm-debate.py" => Some(Route::Project {
             name: "llm_debate".to_string(),
+        }),
+        "floating_point_unit.sv" => Some(Route::Project {
+            name: "floating_point_unit".to_string(),
         }),
         _ => None,
     }
