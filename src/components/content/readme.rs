@@ -85,7 +85,7 @@ pub fn readme() -> Html {
                             <span class="icon">{"✉️"}</span>
                             {"Email Me"}
                         </a>
-                        <a href="www.linkedin.com/in/mate-kopaliani-8838a7277" target="_blank" class="contact-link">
+                        <a href="https://www.linkedin.com/in/mate-kopaliani-8838a7277" target="_blank" class="contact-link">
                             <span class="icon">{"🔗"}</span>
                             {"LinkedIn"}
                         </a>

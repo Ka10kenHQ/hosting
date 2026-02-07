@@ -1,6 +1,9 @@
 use crate::models::sidebar_tree::*;
+use crate::routes::Route;
 use yew::events::KeyboardEvent;
 use yew::prelude::*;
+use yew_router::hooks::use_navigator;
+use yew_router::prelude::Navigator;
 
 fn file_icon_class(node: &Node) -> &'static str {
     match node {
@@ -25,21 +28,36 @@ fn file_icon_class(node: &Node) -> &'static str {
     }
 }
 
-fn github_url(name: &str) -> Option<&'static str> {
+fn markdown_page(name: &str) -> Option<Route> {
     match name {
-        "watchclean.tv.go" => Some("https://github.com/Ka10kenHQ/watchclean.tv"),
-        "jobless_ai.py" => Some("https://github.com/Ka10kenHQ/Jobless-AI"),
-        "OnlyVim.lua" => Some("https://github.com/Ka10kenHQ/OnlyVim"),
-        "ragtrace.ipynb" => Some("https://github.com/Ka10ken1/RAGTrace"),
+        "blog1.md" => Some(Route::Blog {
+            id: "1".to_string(),
+        }),
+        "blog2.md" => Some(Route::Blog {
+            id: "2".to_string(),
+        }),
+        "README.md" => Some(Route::Readme),
         _ => None,
     }
 }
 
-fn markdown_page(name: &str) -> Option<&'static str> {
+fn project_page(name: &str) -> Option<Route> {
     match name {
-        "blog1.md" => Some("/hosting/blog/1"),
-        "blog2.md" => Some("/hosting/blog/2"),
-        "README.md" => Some("/hosting/about"),
+        "watchclean.tv.go" => Some(Route::Project {
+            name: "watchclean".to_string(),
+        }),
+        "jobless_ai.py" => Some(Route::Project {
+            name: "jobless_ai".to_string(),
+        }),
+        "OnlyVim.lua" => Some(Route::Project {
+            name: "only_vim".to_string(),
+        }),
+        "ragtrace.ipynb" => Some(Route::Project {
+            name: "ragtrace".to_string(),
+        }),
+        "llm-debate.py" => Some(Route::Project {
+            name: "llm_debate".to_string(),
+        }),
         _ => None,
     }
 }
@@ -69,6 +87,7 @@ fn handle_keydown(
     selected_index: &UseStateHandle<usize>,
     nodes: &UseStateHandle<Vec<Node>>,
     current_path: &UseStateHandle<Vec<Node>>,
+    navigator: Navigator,
 ) {
     let max_index = nodes.len().saturating_sub(1);
 
@@ -76,18 +95,27 @@ fn handle_keydown(
         "j" => selected_index.set((**selected_index + 1).min(max_index)),
         "k" => selected_index.set((**selected_index).saturating_sub(1)),
         "Enter" => {
-            let onclick =
-                make_onclick_callback(selected_index.clone(), nodes.clone(), current_path.clone());
+            let onclick = make_onclick_callback(
+                selected_index.clone(),
+                nodes.clone(),
+                current_path.clone(),
+                navigator,
+            );
             onclick.emit(**selected_index);
         }
         _ => {}
     }
 }
 
+fn navigate_to(navigator: &yew_router::navigator::Navigator, route: Route) {
+    navigator.push(&route);
+}
+
 fn make_onclick_callback(
     selected_index: UseStateHandle<usize>,
     nodes: UseStateHandle<Vec<Node>>,
     current_path: UseStateHandle<Vec<Node>>,
+    navigator: Navigator,
 ) -> Callback<usize> {
     Callback::from(move |index: usize| {
         selected_index.set(index);
@@ -114,14 +142,10 @@ fn make_onclick_callback(
                 nodes.set(node.get_children());
             }
             Node::File(name) => {
-                if let Some(url) = github_url(name) {
-                    if let Some(win) = web_sys::window() {
-                        let _ = win.location().set_href(url);
-                    }
+                if let Some(page) = project_page(name) {
+                    navigate_to(&navigator, page);
                 } else if let Some(page) = markdown_page(name) {
-                    if let Some(win) = web_sys::window() {
-                        let _ = win.location().set_href(page);
-                    }
+                    navigate_to(&navigator, page);
                 } else {
                     web_sys::console::log_1(&format!("File selected: {}", name).into());
                 }
@@ -135,19 +159,33 @@ pub fn sidebar() -> Html {
     let nodes = use_state(|| root_nodes());
     let selected_index = use_state(|| 0);
     let current_path = use_state(|| vec![]);
+    let navigator = use_navigator().unwrap();
 
     let on_keydown = {
         let selected_index_clone = selected_index.clone();
         let nodes_clone = nodes.clone();
         let current_path_clone = current_path.clone();
-
+        let navigator_for_keydown = navigator.clone();
         Callback::from(move |e: KeyboardEvent| {
-            handle_keydown(e, &selected_index_clone, &nodes_clone, &current_path_clone)
+            let selected_index_inner = selected_index_clone.clone();
+            let nodes_inner = nodes_clone.clone();
+            let current_path_inner = current_path_clone.clone();
+            handle_keydown(
+                e,
+                &selected_index_inner,
+                &nodes_inner,
+                &current_path_inner,
+                navigator_for_keydown.clone(),
+            )
         })
     };
 
-    let onclick_item =
-        make_onclick_callback(selected_index.clone(), nodes.clone(), current_path.clone());
+    let onclick_item = make_onclick_callback(
+        selected_index.clone(),
+        nodes.clone(),
+        current_path.clone(),
+        navigator.clone(),
+    );
 
     html! {
         <aside class="sidebar" tabindex="0" onkeydown={on_keydown}>

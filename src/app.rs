@@ -1,9 +1,14 @@
-use crate::components::router_body::RouterBody;
+use crate::components::{router_body::RouterBody, sidebar::Sidebar};
 use yew::prelude::*;
 
 #[function_component(App)]
 pub fn app() -> Html {
     html!(
-        <RouterBody />
+        <div class="app">
+            <Sidebar/>
+            <main>
+                <RouterBody />
+            </main>
+        </div>
     )
 }

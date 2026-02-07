@@ -1,4 +1,4 @@
-use crate::components::{body::Body, sidebar::Sidebar};
+use crate::components::body::Body;
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]
@@ -10,7 +10,6 @@ pub struct PageProps {
 pub fn page(props: &PageProps) -> Html {
     html! {
         <div class="page-layout">
-            <Sidebar/>
             <div class="main-content">
                 <Body children={props.children.clone()} />
             </div>

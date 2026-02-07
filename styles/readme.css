@@ -373,3 +373,120 @@
     }
 }
 
+.project-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+.project-hero {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 0;
+    border-bottom: 3px solid #fabd2f;
+}
+.project-title {
+    font-size: 3.5rem;
+    color: #fbf1c7;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.project-tagline {
+    font-size: 1.3rem;
+    color: #928374;
+    margin: 0;
+    font-style: italic;
+}
+.project-section {
+    margin-bottom: 40px;
+}
+.project-section h3 {
+    color: #fabd2f;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.project-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #d5c4a1;
+    margin-bottom: 30px;
+}
+.tech-stack {
+    margin-top: 30px;
+}
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.tech-badge {
+    background-color: #3c3836;
+    color: #83a598;
+    padding: 8px 16px;
+    border: 1px solid #504945;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.tech-badge:hover {
+    background-color: #458588;
+    color: #fbf1c7;
+    border-color: #83a598;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: #d5c4a1;
+    line-height: 1.6;
+}
+.feature-bullet {
+    color: #fabd2f;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.github-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 16px 32px;
+    background-color: #3c3836;
+    color: #fbf1c7;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid #504945;
+    transition: all 0.3s ease;
+}
+.github-cta:hover {
+    background-color: #fabd2f;
+    color: #1d2021;
+    border-color: #fabd2f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 189, 47, 0.3);
+}
+.github-icon {
+    font-size: 1.3rem;
+}
+@media (max-width: 768px) {
+    .project-container {
+        padding: 40px 20px;
+    }
+    
+    .project-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-tagline {
+        font-size: 1.1rem;
+    }
+}
