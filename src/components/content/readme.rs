@@ -4,7 +4,7 @@ use yew::{Html, function_component, html};
 pub fn readme() -> Html {
     html! {
         <div class="readme-container">
-            <h1>{"Mate Kopaliani"}</h1>
+            <h1>{"Readme"}</h1>
 
             <div class="cards-grid">
                 <div class="info-card">
