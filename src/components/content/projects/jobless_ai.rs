@@ -11,7 +11,8 @@ pub fn jobless_ai() -> Html {
             tech_stack={vec![
                 "Python".to_string(),
                 "AI/ML".to_string(),
-                "Automation".to_string(),
+                "MCP".to_string(),
+                "MongoDB".to_string(),
             ]}
             features={vec![
                 "Automated job searching".to_string(),

@@ -8,19 +8,42 @@ pub struct ProjectPageProps {
     pub tech_stack: Vec<String>,
     pub features: Vec<String>,
     pub github_url: String,
+
+    #[prop_or_default]
+    pub images: Vec<String>,
 }
 
 #[function_component(ProjectPage)]
 pub fn project_page(props: &ProjectPageProps) -> Html {
+    let has_images = !props.images.is_empty();
+
     html! {
         <div class="project-container">
             <header class="project-hero">
                 <h1 class="project-title">{&props.title}</h1>
                 <p class="project-tagline">{&props.tagline}</p>
             </header>
+
+            {if has_images {
+                html! {
+                    <section class="project-gallery">
+                        <div class="gallery-grid">
+                            {props.images.iter().enumerate().map(|(i, img)| {
+                                html! {
+                                    <div class="gallery-item" key={i}>
+                                        <img src={img.clone()} alt={format!("{} screenshot {}", props.title, i + 1)} />
+                                    </div>
+                                }
+                            }).collect::<Html>()}
+                        </div>
+                    </section>
+                }
+            } else {
+                html! {}
+            }}
+
             <section class="project-section">
                 <p class="project-description">{&props.description}</p>
-
                 <div class="tech-stack">
                     <h3>{"Tech Stack"}</h3>
                     <div class="tech-badges">
