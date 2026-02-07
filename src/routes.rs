@@ -1,5 +1,4 @@
-use crate::components::content::readme::Readme;
-use crate::components::page::Page;
+use crate::components::{content::readme::Readme, page::Page};
 use yew::prelude::*;
 use yew_router::Routable;
 
@@ -7,6 +6,8 @@ use yew_router::Routable;
 pub enum Route {
     #[at("/hosting/")]
     Home,
+    #[at("/hosting/about")]
+    Readme,
     #[at("/hosting/blog/:id")]
     Blog { id: String },
     #[not_found]
@@ -17,7 +18,7 @@ pub enum Route {
 pub fn switch(route: Route) -> Html {
     match route {
         Route::Blog { id } => html! { <Page children={String::from(id)} /> },
-        Route::Home => html! { <Page> <Readme /> </Page> },
+        Route::Home | Route::Readme => html! { <Page> <Readme /> </Page> },
         Route::NotFound => html! { <div><h1>{ "404 Not Found" }</h1></div> },
     }
 }

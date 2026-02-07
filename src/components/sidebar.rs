@@ -37,9 +37,9 @@ fn github_url(name: &str) -> Option<&'static str> {
 
 fn markdown_page(name: &str) -> Option<&'static str> {
     match name {
-        "blog1.md" => Some("/blog/blog1"),
-        "blog2.md" => Some("/blog/blog2"),
-        "README.md" => Some("/about"),
+        "blog1.md" => Some("/hosting/blog/1"),
+        "blog2.md" => Some("/hosting/blog/2"),
+        "README.md" => Some("/hosting/about"),
         _ => None,
     }
 }
