@@ -27,7 +27,7 @@ pub fn readme() -> Html {
                         {"I am in my 4th year of CS/Math degree with "}
                         {"Current Cummulative Gpa"}
                         <br/>
-                        <strong>{"GPA: 3.5/4.0"}</strong>
+                        <strong>{"GPA: 3.54/4.0"}</strong>
                         <br/>
                         {"Average Grade:"}
                         <br/>
@@ -38,7 +38,7 @@ pub fn readme() -> Html {
                 <div class="info-card work-experience-card">
                     <h2>{" Work Experience"}</h2>
                     <div class="experience-item">
-                        <h3>{"Back-End Software Engineer"}</h3>
+                        <h3>{"Software Engineer"}</h3>
                         <p>
                             <a href="https://www.cvcertified.com/" target="_blank">
                                 {"Collision Vision"}
@@ -48,7 +48,7 @@ pub fn readme() -> Html {
                         </p>
                     </div>
                     <div class="experience-item">
-                        <h3>{"Back-End Developer Intern"}</h3>
+                        <h3>{"Back-End Engineering Intern"}</h3>
                         <p>
                             <a href="https://api24.ge/home" target="_blank">
                                 {"API24"}
@@ -71,10 +71,10 @@ pub fn readme() -> Html {
                 <div class="info-card">
                     <h2>{" Interests"}</h2>
                     <ul>
-                        <li>{"Distributed systems & microservices"}</li>
-                        <li>{"Machine learning & artificial intelligence"}</li>
-                        <li>{"Systems programming & optimization"}</li>
-                        <li>{"Developer tooling & productivity"}</li>
+                        <li>{"Distributed systems"}</li>
+                        <li>{"Math"}</li>
+                        <li>{"ML & AI "}</li>
+                        <li>{"Developer tooling"}</li>
                     </ul>
                 </div>
 
