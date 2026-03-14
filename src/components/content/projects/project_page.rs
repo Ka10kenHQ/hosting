@@ -70,7 +70,7 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
                 </ul>
             </section>
             <a href={props.github_url.clone()} target="_blank" class="github-cta">
-                <span class="github-icon">{"⚡"}</span>
+                // <span class="github-icon">{"⚡"}</span>
                 {"View on GitHub"}
             </a>
         </div>

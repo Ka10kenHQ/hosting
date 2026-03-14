@@ -98,7 +98,6 @@ pub fn readme() -> Html {
             </div>
 
             <hr/>
-            <p class="footer-text">{"Thanks for stopping by! "}</p>
         </div>
     }
 }
