@@ -3,8 +3,10 @@ use yew::{Html, function_component, html};
 use crate::components::content::projects::project_page::ProjectPage;
 
 #[function_component(Watchclean)]
-pub fn watchclean() -> Html {
-    html! {
+pub fn watchclean() -> Html 
+{
+    html!
+    {
         <ProjectPage
             title="watchclean.tv"
             tagline="Ad-free blazingly fast local media collection manager"

@@ -3,13 +3,16 @@ use yew::{Html, function_component, html};
 use yew_router::BrowserRouter;
 
 #[function_component(Main)]
-pub fn main() -> Html {
+pub fn main() -> Html
+{
     html! {
         <BrowserRouter>
             <App />
         </BrowserRouter>
     }
 }
-fn main() {
+
+fn main()
+{
     yew::Renderer::<Main>::new().render();
 }

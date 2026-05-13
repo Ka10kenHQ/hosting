@@ -2,8 +2,10 @@ use crate::components::content::projects::project_page::ProjectPage;
 use yew::{Html, function_component, html};
 
 #[function_component(FloatingPointUnit)]
-pub fn floating_point_unit() -> Html {
-    html! {
+pub fn floating_point_unit() -> Html 
+{
+    html!
+    {
         <ProjectPage
             title="Floating Point Unit"
             tagline="IEEE 754 compliant floating-point arithmetic unit in SystemVerilog"

@@ -33,11 +33,11 @@ pub fn root_nodes() -> Vec<Node> {
             vec![
                 Node::File("../".to_string()),
                 Node::File("./".to_string()),
+                Node::File("floating_point_unit.sv".to_string()),
+                Node::File("OnlyVim.lua".to_string()),
                 Node::File("llm-debate.py".to_string()),
                 Node::File("watchclean.tv.go".to_string()),
                 Node::File("jobless_ai.py".to_string()),
-                Node::File("OnlyVim.lua".to_string()),
-                Node::File("floating_point_unit.sv".to_string()),
                 Node::File("ragtrace.ipynb".to_string()),
             ],
         ),

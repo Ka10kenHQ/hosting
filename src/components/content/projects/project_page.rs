@@ -1,7 +1,8 @@
 use yew::{Html, Properties, function_component, html};
 
 #[derive(Properties, PartialEq)]
-pub struct ProjectPageProps {
+pub struct ProjectPageProps 
+{
     pub title: String,
     pub tagline: String,
     pub description: String,
@@ -14,10 +15,12 @@ pub struct ProjectPageProps {
 }
 
 #[function_component(ProjectPage)]
-pub fn project_page(props: &ProjectPageProps) -> Html {
+pub fn project_page(props: &ProjectPageProps) -> Html 
+{
     let has_images = !props.images.is_empty();
 
-    html! {
+    html! 
+    {
         <div class="project-container">
             <header class="project-hero">
                 <h1 class="project-title">{&props.title}</h1>

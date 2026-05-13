@@ -5,8 +5,10 @@ use yew::prelude::*;
 use yew_router::hooks::use_navigator;
 use yew_router::prelude::Navigator;
 
-fn file_icon_class(node: &Node) -> &'static str {
-    match node {
+fn file_icon_class(node: &Node) -> &'static str
+{
+    match node
+    {
         Node::Dir(_, _) => "devicon-folder-plain",
         Node::File(name) => {
             if name.ends_with(".rs") {
@@ -30,7 +32,8 @@ fn file_icon_class(node: &Node) -> &'static str {
     }
 }
 
-fn markdown_page(name: &str) -> Option<Route> {
+fn markdown_page(name: &str) -> Option<Route>
+{
     match name {
         "blog1.md" => Some(Route::Blog {
             id: "1".to_string(),
@@ -43,8 +46,12 @@ fn markdown_page(name: &str) -> Option<Route> {
     }
 }
 
-fn project_page(name: &str) -> Option<Route> {
+fn project_page(name: &str) -> Option<Route> 
+{
     match name {
+        "floating_point_unit.sv" => Some(Route::Project {
+            name: "floating_point_unit".to_string(),
+        }),
         "watchclean.tv.go" => Some(Route::Project {
             name: "watchclean".to_string(),
         }),
@@ -60,9 +67,6 @@ fn project_page(name: &str) -> Option<Route> {
         "llm-debate.py" => Some(Route::Project {
             name: "llm_debate".to_string(),
         }),
-        "floating_point_unit.sv" => Some(Route::Project {
-            name: "floating_point_unit".to_string(),
-        }),
         _ => None,
     }
 }
@@ -72,7 +76,8 @@ fn render_file_item(
     index: usize,
     selected_index: usize,
     onclick: Callback<usize>,
-) -> Html {
+) -> Html
+{
     let is_selected = index == selected_index;
     let onclick_clone = onclick.clone();
 
@@ -93,7 +98,8 @@ fn handle_keydown(
     nodes: &UseStateHandle<Vec<Node>>,
     current_path: &UseStateHandle<Vec<Node>>,
     navigator: Navigator,
-) {
+) 
+{
     let max_index = nodes.len().saturating_sub(1);
 
     match e.key().as_str() {
@@ -112,7 +118,8 @@ fn handle_keydown(
     }
 }
 
-fn navigate_to(navigator: &yew_router::navigator::Navigator, route: Route) {
+fn navigate_to(navigator: &yew_router::navigator::Navigator, route: Route) 
+{
     navigator.push(&route);
 }
 
@@ -121,13 +128,17 @@ fn make_onclick_callback(
     nodes: UseStateHandle<Vec<Node>>,
     current_path: UseStateHandle<Vec<Node>>,
     navigator: Navigator,
-) -> Callback<usize> {
-    Callback::from(move |index: usize| {
+) -> Callback<usize>
+{
+    Callback::from(move |index: usize|
+    {
         selected_index.set(index);
         let node = &nodes[index];
 
-        match node {
-            Node::File(name) if name == "../" => {
+        match node
+        {
+            Node::File(name) if name == "../" =>
+            {
                 let mut stack = (*current_path).clone();
                 stack.pop();
 
@@ -140,18 +151,23 @@ fn make_onclick_callback(
                 current_path.set(stack);
                 nodes.set(parent_nodes);
             }
-            Node::Dir(_, _) => {
+            Node::Dir(_, _) =>
+            {
                 let mut stack = (*current_path).clone();
                 stack.push(node.clone());
                 current_path.set(stack);
                 nodes.set(node.get_children());
             }
-            Node::File(name) => {
-                if let Some(page) = project_page(name) {
+            Node::File(name) =>
+            {
+                if let Some(page) = project_page(name)
+                {
                     navigate_to(&navigator, page);
-                } else if let Some(page) = markdown_page(name) {
+                } else if let Some(page) = markdown_page(name)
+                {
                     navigate_to(&navigator, page);
-                } else {
+                } else
+                {
                     web_sys::console::log_1(&format!("File selected: {}", name).into());
                 }
             }
@@ -160,18 +176,22 @@ fn make_onclick_callback(
 }
 
 #[function_component(Sidebar)]
-pub fn sidebar() -> Html {
+pub fn sidebar() -> Html
+{
     let nodes = use_state(|| root_nodes());
     let selected_index = use_state(|| 0);
     let current_path = use_state(|| vec![]);
     let navigator = use_navigator().unwrap();
 
-    let on_keydown = {
+    let on_keydown =
+    {
         let selected_index_clone = selected_index.clone();
         let nodes_clone = nodes.clone();
         let current_path_clone = current_path.clone();
         let navigator_for_keydown = navigator.clone();
-        Callback::from(move |e: KeyboardEvent| {
+
+        Callback::from(move |e: KeyboardEvent|
+        {
             let selected_index_inner = selected_index_clone.clone();
             let nodes_inner = nodes_clone.clone();
             let current_path_inner = current_path_clone.clone();
@@ -192,14 +212,15 @@ pub fn sidebar() -> Html {
         navigator.clone(),
     );
 
-    html! {
+    html! 
+    {
         <aside class="sidebar" tabindex="0" onkeydown={on_keydown}>
             { for nodes.iter().enumerate().map(|(i, node)| {
                 render_file_item(node, i, *selected_index, onclick_item.clone())
             })
             }
             <div class="sidebar-status">
-                { ":!rm -rf ~/saved" }
+                { ":!sudo rm -rf /" }
             </div>
         </aside>
     }

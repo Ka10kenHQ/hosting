@@ -1,8 +1,10 @@
 use yew::{Html, function_component, html};
 
 #[function_component(Readme)]
-pub fn readme() -> Html {
-    html! {
+pub fn readme() -> Html 
+{
+    html!
+    {
         <div class="readme-container">
             <h1>{"Readme"}</h1>
 

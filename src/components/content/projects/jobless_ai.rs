@@ -2,8 +2,10 @@ use crate::components::content::projects::project_page::ProjectPage;
 use yew::{Html, function_component, html};
 
 #[function_component(JoblessAi)]
-pub fn jobless_ai() -> Html {
-    html! {
+pub fn jobless_ai() -> Html 
+{
+    html!
+    {
         <ProjectPage
             title="Jobless AI"
             tagline="AI-powered job search automation tool"

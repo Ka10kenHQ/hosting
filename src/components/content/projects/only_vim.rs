@@ -2,8 +2,10 @@ use crate::components::content::projects::project_page::ProjectPage;
 use yew::{Html, function_component, html};
 
 #[function_component(OnlyVim)]
-pub fn only_vim() -> Html {
-    html! {
+pub fn only_vim() -> Html
+{
+    html!
+    {
         <ProjectPage
             title="OnlyVim"
             tagline="Minimal, sane, and ready-to-hack Neovim distribution"

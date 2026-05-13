@@ -2,8 +2,10 @@ use crate::components::content::projects::project_page::ProjectPage;
 use yew::{Html, function_component, html};
 
 #[function_component(Ragtrace)]
-pub fn ragtrace() -> Html {
-    html! {
+pub fn ragtrace() -> Html 
+{
+    html!
+    {
         <ProjectPage
             title="RAGTrace"
             tagline="Visualization and diagnostic platform for RAG systems"

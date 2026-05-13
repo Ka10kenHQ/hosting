@@ -2,8 +2,10 @@ use crate::components::content::projects::project_page::ProjectPage;
 use yew::{Html, function_component, html};
 
 #[function_component(LlmDebate)]
-pub fn llm_debate() -> Html {
-    html! {
+pub fn llm_debate() -> Html 
+{
+    html!
+    {
         <ProjectPage
             title="LLM Debate"
             tagline="Multi-agent debate between LLMs for better reasoning"
