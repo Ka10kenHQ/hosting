@@ -1,105 +1,116 @@
-use yew::{Html, function_component, html};
+use yew::{function_component, html, Html};
 
 #[function_component(Readme)]
-pub fn readme() -> Html 
-{
-    html!
-    {
+pub fn readme() -> Html {
+    html! {
         <div class="readme-container">
-            <h1>{"Readme"}</h1>
+            <section class="hero">
+                <p class="eyebrow">{"Developer Docs"}</p>
+                <h1>{"Hi, I'm Mate Kopaliani"}</h1>
+                <p class="hero-copy">
+                    {"Computer Science student and software engineer (at least trying :) building back-end systems, \
+                    AI tools, developer tooling, and low-level projects"}
+                </p>
+                <div class="hero-actions">
+                    <a class="button-secondary" href="https://github.com/Ka10ken1" target="_blank">{"GitHub"}</a>
+                </div>
+            </section>
 
-            <div class="cards-grid">
-                <div class="info-card">
-                    <h2>{"About Me"}</h2>
+            <section class="dashboard-grid" aria-label="Overview">
+                <article class="info-card intro-card">
+                    <div class="card-label">{"Profile"}</div>
+                    <h2>{"About"}</h2>
                     <p>
-                        {"Hi, I'm Mate Kopaliani and welcome to my portfolio page. \
-                         If you are interested, you can check out my projects and source code :)"}
+                        {"I enjoy building reliable services, terminal-centered workflows, \
+                        system design experiments, and practical AI/ML projects."}
                     </p>
                     <p>
-                        {"I'm a 20-year-old Computer Science student from Georgia. \
-                         Love working with Linux, terminals, back-end development (system design), and AI/ML related topics."}
+                        {"Currently working as a Software Engineer at Collision Vision, with \
+                        previous back-end work around OCR, document processing, and translation."}
                     </p>
-                </div>
-
-
-                <div class="info-card">
-                    <h2>{" Education"}</h2>
-                    <h4>{"Bachelor's in Computer Science with Minor in Mathematics"}</h4>
-                    <p>
-                        {"I am in my 4th year of CS/Math degree with "}
-                        {"Current Cummulative Gpa"}
-                        <br/>
-                        <strong>{"GPA: 3.54/4.0"}</strong>
-                        <br/>
-                        {"Average Grade:"}
-                        <br/>
-                        <strong> {"92/100"}</strong>
-                    </p>
-                </div>
-
-                <div class="info-card work-experience-card">
-                    <h2>{" Work Experience"}</h2>
-                    <div class="experience-item">
-                        <h3>{"Software Engineer"}</h3>
-                        <p>
-                            <a href="https://www.cvcertified.com/" target="_blank">
-                                {"Collision Vision"}
-                            </a>
-                            {" (Current) - developing scalable back-end systems \
-                             for enterprise application. working with .NET, azure, python"}
-                        </p>
+                    <div class="quick-links">
+                        <a href="https://www.linkedin.com/in/mate-kopaliani-8838a7277" target="_blank">{"LinkedIn"}</a>
+                        <a href="mailto:matekopaliani12@gmail.com">{"Email"}</a>
                     </div>
-                    <div class="experience-item">
-                        <h3>{"Back-End Engineering Intern"}</h3>
-                        <p>
-                            <a href="https://api24.ge/home" target="_blank">
-                                {"API24"}
-                            </a>
-                            {" - Built and maintained back-end primarily focused on document processing with OCR,
-                            pattern recognition and translation
-                            "}
-                        </p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>{"Student Tutor of Linear Algebra"}</h3>
-                        <p>
-                            {"KIU University - Tutored undergraduate students in Linear Algebra, \
-                             helping them understand mathematical concepts including vector spaces, \
-                             matrix operations, eigenvalues, and linear transformations."}
-                        </p>
-                    </div>
-                </div>
+                </article>
 
-                <div class="info-card">
-                    <h2>{" Interests"}</h2>
+                <article class="info-card releases-card">
+                    <div class="card-label">{"Recent Work"}</div>
+                    <h2>{"Releases"}</h2>
+                    <div class="release-list">
+                        <a class="release-row" href="/hosting/project/ragtrace">
+                            <span>{"2026-05"}</span>
+                            <strong>{"RAGTrace"}</strong>
+                            <em>{"diagnostics"}</em>
+                        </a>
+                        <a class="release-row" href="/hosting/project/llm_debate">
+                            <span>{"2026-04"}</span>
+                            <strong>{"LLM Debate"}</strong>
+                            <em>{"agents"}</em>
+                        </a>
+                        <a class="release-row" href="/hosting/project/watchclean">
+                            <span>{"2026-03"}</span>
+                            <strong>{"watchclean.tv"}</strong>
+                            <em>{"media"}</em>
+                        </a>
+                        <a class="release-row" href="/hosting/project/only_vim">
+                            <span>{"2026-02"}</span>
+                            <strong>{"OnlyVim"}</strong>
+                            <em>{"tooling"}</em>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="info-card docs-card">
+                    <div class="card-label">{"Notes"}</div>
+                    <h2>{"Focus Areas"}</h2>
                     <ul>
-                        <li>{"Distributed systems"}</li>
-                        <li>{"Math"}</li>
-                        <li>{"ML & AI "}</li>
-                        <li>{"Developer tooling"}</li>
+                        <li>{"Distributed systems and back-end architecture"}</li>
+                        <li>{"Math, AI/ML, and retrieval systems"}</li>
+                        <li>{"Linux, terminals, and developer experience"}</li>
+                        <li>{"Hardware-adjacent and low-level programming"}</li>
                     </ul>
-                </div>
+                </article>
+            </section>
 
-                <div class="info-card contact-card">
-                    <h2>{" Get In Touch"}</h2>
-                    <div class="contact-links">
-                        <a href="mailto:matekopaliani12@gmail.com" class="contact-link">
-                            <span class="icon">{"✉️"}</span>
-                            {"Email Me"}
-                        </a>
-                        <a href="https://www.linkedin.com/in/mate-kopaliani-8838a7277" target="_blank" class="contact-link">
-                            <span class="icon">{"🔗"}</span>
-                            {"LinkedIn"}
-                        </a>
-                        <a href="https://github.com/Ka10ken1" target="_blank" class="contact-link">
-                            <span class="icon">{"🐙"}</span>
-                            {"GitHub"}
-                        </a>
-                    </div>
+            <section class="library-section">
+                <div class="section-heading">
+                    <p class="eyebrow">{"Library"}</p>
+                    <h2>{"Projects"}</h2>
                 </div>
-            </div>
-
-            <hr/>
+                <div class="project-table">
+                    <a class="project-row" href="/hosting/project/floating_point_unit">
+                        <span class="project-name">{"Floating Point Unit"}</span>
+                        <span>{"SystemVerilog"}</span>
+                        <span>{"IEEE 754 floating-point arithmetic unit"}</span>
+                    </a>
+                    <a class="project-row" href="/hosting/project/jobless_ai">
+                        <span class="project-name">{"Jobless AI"}</span>
+                        <span>{"Python / MongoDB"}</span>
+                        <span>{"AI-powered job search automation"}</span>
+                    </a>
+                    <a class="project-row" href="/hosting/project/llm_debate">
+                        <span class="project-name">{"LLM Debate"}</span>
+                        <span>{"Python"}</span>
+                        <span>{"Multi-agent debate system for better reasoning"}</span>
+                    </a>
+                    <a class="project-row" href="/hosting/project/ragtrace">
+                        <span class="project-name">{"RAGTrace"}</span>
+                        <span>{"Python / Jupyter"}</span>
+                        <span>{"Different RAG approach analysis visualization and diagnostics"}</span>
+                    </a>
+                    <a class="project-row" href="/hosting/project/watchclean">
+                        <span class="project-name">{"watchclean.tv"}</span>
+                        <span>{"Go"}</span>
+                        <span>{"Local media collection manager"}</span>
+                    </a>
+                    <a class="project-row" href="/hosting/project/only_vim">
+                        <span class="project-name">{"OnlyVim"}</span>
+                        <span>{"Lua / Neovim"}</span>
+                        <span>{"Minimal Neovim distribution"}</span>
+                    </a>
+                </div>
+            </section>
         </div>
     }
 }

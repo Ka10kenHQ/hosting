@@ -8,7 +8,7 @@ pub fn ragtrace() -> Html
     {
         <ProjectPage
             title="RAGTrace"
-            tagline="Visualization and diagnostic platform for RAG systems"
+            tagline="Visualization and diagnostic of different RAG methodologies"
             description="Understand and refine retrieval-generation dynamics in RAG systems. Visualize how your different RAG approaches processes and handles queries by detecting plagiarisms in code blocks"
             tools={vec![
                 "Python".to_string(),
