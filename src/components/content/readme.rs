@@ -1,4 +1,6 @@
+use crate::routes::Route;
 use yew::{function_component, html, Html};
+use yew_router::prelude::Link;
 
 #[function_component(Readme)]
 pub fn readme() -> Html {
@@ -38,26 +40,26 @@ pub fn readme() -> Html {
                     <div class="card-label">{"Recent Work"}</div>
                     <h2>{"Releases"}</h2>
                     <div class="release-list">
-                        <a class="release-row" href="/hosting/project/ragtrace">
+                        <Link<Route> classes="release-row" to={Route::Project { name: "ragtrace".to_string() }}>
                             <span>{"2026-05"}</span>
                             <strong>{"RAGTrace"}</strong>
                             <em>{"diagnostics"}</em>
-                        </a>
-                        <a class="release-row" href="/hosting/project/llm_debate">
+                        </Link<Route>>
+                        <Link<Route> classes="release-row" to={Route::Project { name: "llm_debate".to_string() }}>
                             <span>{"2026-04"}</span>
                             <strong>{"LLM Debate"}</strong>
                             <em>{"agents"}</em>
-                        </a>
-                        <a class="release-row" href="/hosting/project/watchclean">
+                        </Link<Route>>
+                        <Link<Route> classes="release-row" to={Route::Project { name: "watchclean".to_string() }}>
                             <span>{"2026-03"}</span>
                             <strong>{"watchclean.tv"}</strong>
                             <em>{"media"}</em>
-                        </a>
-                        <a class="release-row" href="/hosting/project/only_vim">
+                        </Link<Route>>
+                        <Link<Route> classes="release-row" to={Route::Project { name: "only_vim".to_string() }}>
                             <span>{"2026-02"}</span>
                             <strong>{"OnlyVim"}</strong>
                             <em>{"tooling"}</em>
-                        </a>
+                        </Link<Route>>
                     </div>
                 </article>
 
@@ -79,36 +81,36 @@ pub fn readme() -> Html {
                     <h2>{"Projects"}</h2>
                 </div>
                 <div class="project-table">
-                    <a class="project-row" href="/hosting/project/floating_point_unit">
+                    <Link<Route> classes="project-row" to={Route::Project { name: "floating_point_unit".to_string() }}>
                         <span class="project-name">{"Floating Point Unit"}</span>
                         <span>{"SystemVerilog"}</span>
                         <span>{"IEEE 754 floating-point arithmetic unit"}</span>
-                    </a>
-                    <a class="project-row" href="/hosting/project/jobless_ai">
+                    </Link<Route>>
+                    <Link<Route> classes="project-row" to={Route::Project { name: "jobless_ai".to_string() }}>
                         <span class="project-name">{"Jobless AI"}</span>
                         <span>{"Python / MongoDB"}</span>
                         <span>{"AI-powered job search automation"}</span>
-                    </a>
-                    <a class="project-row" href="/hosting/project/llm_debate">
+                    </Link<Route>>
+                    <Link<Route> classes="project-row" to={Route::Project { name: "llm_debate".to_string() }}>
                         <span class="project-name">{"LLM Debate"}</span>
                         <span>{"Python"}</span>
                         <span>{"Multi-agent debate system for better reasoning"}</span>
-                    </a>
-                    <a class="project-row" href="/hosting/project/ragtrace">
+                    </Link<Route>>
+                    <Link<Route> classes="project-row" to={Route::Project { name: "ragtrace".to_string() }}>
                         <span class="project-name">{"RAGTrace"}</span>
                         <span>{"Python / Jupyter"}</span>
                         <span>{"Different RAG approach analysis visualization and diagnostics"}</span>
-                    </a>
-                    <a class="project-row" href="/hosting/project/watchclean">
+                    </Link<Route>>
+                    <Link<Route> classes="project-row" to={Route::Project { name: "watchclean".to_string() }}>
                         <span class="project-name">{"watchclean.tv"}</span>
                         <span>{"Go"}</span>
                         <span>{"Local media collection manager"}</span>
-                    </a>
-                    <a class="project-row" href="/hosting/project/only_vim">
+                    </Link<Route>>
+                    <Link<Route> classes="project-row" to={Route::Project { name: "only_vim".to_string() }}>
                         <span class="project-name">{"OnlyVim"}</span>
                         <span>{"Lua / Neovim"}</span>
                         <span>{"Minimal Neovim distribution"}</span>
-                    </a>
+                    </Link<Route>>
                 </div>
             </section>
         </div>
