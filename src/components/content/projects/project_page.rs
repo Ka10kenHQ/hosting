@@ -23,6 +23,7 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
         ("llm_debate", "LLM Debate"),
         ("watchclean", "watchclean.tv"),
         ("only_vim", "OnlyVim"),
+        ("vortexnote", "VortexNote"),
         ("floating_point_unit", "Floating Point Unit"),
         ("jobless_ai", "Jobless AI"),
     ];

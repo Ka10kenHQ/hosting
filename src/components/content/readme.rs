@@ -55,6 +55,11 @@ pub fn readme() -> Html {
                             <strong>{"watchclean.tv"}</strong>
                             <em>{"media"}</em>
                         </Link<Route>>
+                        <Link<Route> classes="release-row" to={Route::Project { name: "vortexnote".to_string() }}>
+                            <span>{"2026-06"}</span>
+                            <strong>{"VortexNote"}</strong>
+                            <em>{"platform"}</em>
+                        </Link<Route>>
                         <Link<Route> classes="release-row" to={Route::Project { name: "only_vim".to_string() }}>
                             <span>{"2026-02"}</span>
                             <strong>{"OnlyVim"}</strong>
@@ -105,6 +110,11 @@ pub fn readme() -> Html {
                         <span class="project-name">{"watchclean.tv"}</span>
                         <span>{"Go"}</span>
                         <span>{"Local media collection manager"}</span>
+                    </Link<Route>>
+                    <Link<Route> classes="project-row" to={Route::Project { name: "vortexnote".to_string() }}>
+                        <span class="project-name">{"VortexNote"}</span>
+                        <span>{"Rust / Go / Python / Svelte"}</span>
+                        <span>{"File management platform with AI-powered document search"}</span>
                     </Link<Route>>
                     <Link<Route> classes="project-row" to={Route::Project { name: "only_vim".to_string() }}>
                         <span class="project-name">{"OnlyVim"}</span>

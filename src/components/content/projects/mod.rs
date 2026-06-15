@@ -4,4 +4,5 @@ pub mod llm_debate;
 pub mod only_vim;
 pub mod project_page;
 pub mod ragtrace;
+pub mod vortexnote;
 pub mod watchclean;
