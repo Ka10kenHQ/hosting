@@ -52,6 +52,9 @@ fn project_page(name: &str) -> Option<Route>
         "floating_point_unit.sv" => Some(Route::Project {
             name: "floating_point_unit".to_string(),
         }),
+        "vortexnote.rs" => Some(Route::Project {
+            name: "vortexnote".to_string(),
+        }),
         "watchclean.tv.go" => Some(Route::Project {
             name: "watchclean".to_string(),
         }),
@@ -66,9 +69,6 @@ fn project_page(name: &str) -> Option<Route>
         }),
         "llm-debate.py" => Some(Route::Project {
             name: "llm_debate".to_string(),
-        }),
-        "vortexnote.rs" => Some(Route::Project {
-            name: "vortexnote".to_string(),
         }),
         _ => None,
     }

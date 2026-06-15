@@ -40,6 +40,11 @@ pub fn readme() -> Html {
                     <div class="card-label">{"Recent Work"}</div>
                     <h2>{"Releases"}</h2>
                     <div class="release-list">
+                        <Link<Route> classes="release-row" to={Route::Project { name: "vortexnote".to_string() }}>
+                            <span>{"2026-06"}</span>
+                            <strong>{"VortexNote"}</strong>
+                            <em>{"platform"}</em>
+                        </Link<Route>>
                         <Link<Route> classes="release-row" to={Route::Project { name: "ragtrace".to_string() }}>
                             <span>{"2026-05"}</span>
                             <strong>{"RAGTrace"}</strong>
@@ -54,11 +59,6 @@ pub fn readme() -> Html {
                             <span>{"2026-03"}</span>
                             <strong>{"watchclean.tv"}</strong>
                             <em>{"media"}</em>
-                        </Link<Route>>
-                        <Link<Route> classes="release-row" to={Route::Project { name: "vortexnote".to_string() }}>
-                            <span>{"2026-06"}</span>
-                            <strong>{"VortexNote"}</strong>
-                            <em>{"platform"}</em>
                         </Link<Route>>
                         <Link<Route> classes="release-row" to={Route::Project { name: "only_vim".to_string() }}>
                             <span>{"2026-02"}</span>
@@ -91,6 +91,14 @@ pub fn readme() -> Html {
                         <span>{"SystemVerilog"}</span>
                         <span>{"IEEE 754 floating-point arithmetic unit"}</span>
                     </Link<Route>>
+                    <Link<Route> classes="project-row" to={Route::Project { name: "vortexnote".to_string() }}>
+                        <span class="project-name">{"VortexNote"}</span>
+                        <span>{"Rust / Go / Python / Svelte"}</span>
+                        <span class="project-desc-with-url">
+                            <span>{"File management platform with AI-powered document search"}</span>
+                            <span class="project-url">{"vortexnote.com"}</span>
+                        </span>
+                    </Link<Route>>
                     <Link<Route> classes="project-row" to={Route::Project { name: "jobless_ai".to_string() }}>
                         <span class="project-name">{"Jobless AI"}</span>
                         <span>{"Python / MongoDB"}</span>
@@ -110,11 +118,6 @@ pub fn readme() -> Html {
                         <span class="project-name">{"watchclean.tv"}</span>
                         <span>{"Go"}</span>
                         <span>{"Local media collection manager"}</span>
-                    </Link<Route>>
-                    <Link<Route> classes="project-row" to={Route::Project { name: "vortexnote".to_string() }}>
-                        <span class="project-name">{"VortexNote"}</span>
-                        <span>{"Rust / Go / Python / Svelte"}</span>
-                        <span>{"File management platform with AI-powered document search"}</span>
                     </Link<Route>>
                     <Link<Route> classes="project-row" to={Route::Project { name: "only_vim".to_string() }}>
                         <span class="project-name">{"OnlyVim"}</span>
