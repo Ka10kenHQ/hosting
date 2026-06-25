@@ -19,13 +19,13 @@ pub struct ProjectPageProps {
 pub fn project_page(props: &ProjectPageProps) -> Html {
     let has_images = !props.images.is_empty();
     let projects = [
-        ("ragtrace", "RAGTrace"),
+        ("floating_point_unit", "Floating Point Unit"),
+        ("vortexnote", "VortexNote"),
         ("llm_debate", "LLM Debate"),
+        ("ragtrace", "RAGTrace"),
+        ("jobless_ai", "Jobless AI"),
         ("watchclean", "watchclean.tv"),
         ("only_vim", "OnlyVim"),
-        ("vortexnote", "VortexNote"),
-        ("floating_point_unit", "Floating Point Unit"),
-        ("jobless_ai", "Jobless AI"),
     ];
 
     html! {
