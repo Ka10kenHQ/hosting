@@ -67,6 +67,7 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
                                             loading={loading}
                                             decoding="async"
                                             fetchpriority={fetchpriority}
+                                            height="100px"
                                         />
                                     </div>
                                 }
