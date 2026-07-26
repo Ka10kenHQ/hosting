@@ -58,9 +58,6 @@ fn project_page(name: &str) -> Option<Route>
         "watchclean.tv.go" => Some(Route::Project {
             name: "watchclean".to_string(),
         }),
-        "jobless_ai.py" => Some(Route::Project {
-            name: "jobless_ai".to_string(),
-        }),
         "OnlyVim.lua" => Some(Route::Project {
             name: "only_vim".to_string(),
         }),

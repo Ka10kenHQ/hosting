@@ -2,15 +2,8 @@
     min-height: 100vh;
     position: relative;
 }
-
 .main-content {
     position: relative;
     z-index: 1;
     min-height: calc(100vh - var(--header-height));
-}
-
-@media (max-width: 768px) {
-    .main-content {
-        min-height: auto;
-    }
 }

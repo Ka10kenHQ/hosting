@@ -37,7 +37,6 @@ pub fn root_nodes() -> Vec<Node> {
                 Node::File("OnlyVim.lua".to_string()),
                 Node::File("llm-debate.py".to_string()),
                 Node::File("watchclean.tv.go".to_string()),
-                Node::File("jobless_ai.py".to_string()),
                 Node::File("ragtrace.ipynb".to_string()),
                 Node::File("vortexnote.rs".to_string()),
             ],

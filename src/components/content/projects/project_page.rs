@@ -23,7 +23,6 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
         ("vortexnote", "VortexNote"),
         ("llm_debate", "LLM Debate"),
         ("ragtrace", "RAGTrace"),
-        ("jobless_ai", "Jobless AI"),
         ("watchclean", "watchclean.tv"),
         ("only_vim", "OnlyVim"),
     ];
@@ -36,7 +35,6 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
             </header>
 
             <nav class="project-switcher" aria-label="Browse projects">
-                <span class="project-switcher__label">{"Browse Projects"}</span>
                 <div class="project-switcher__links">
                     {projects.iter().map(|(slug, title)| {
                         let is_current = *title == props.title;
