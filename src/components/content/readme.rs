@@ -8,7 +8,7 @@ pub fn readme() -> Html {
         <div class="readme-container">
 
             <section class="hero">
-                <h3>{"Hi, I'm Mate Kopaliani"}</h3>
+                <h2>{"Hi, I'm Mate Kopaliani"}</h2>
                 <p class="hero-copy">
                     {"Computer Science student and software engineer (at least trying :). building back-end systems, \
                     AI tools, developer tooling, and low-level stuff"}
