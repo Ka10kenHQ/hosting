@@ -23,9 +23,6 @@ pub fn watchclean() -> Html
                 "Clean, intuitive interface".to_string(),
             ]}
             github_url="https://github.com/Ka10kenHQ/watchclean.tv"
-            images={vec![
-                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/series.jpg".to_string(),
-            ]}
         />
     }
 }

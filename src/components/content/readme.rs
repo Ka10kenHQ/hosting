@@ -10,7 +10,7 @@ pub fn readme() -> Html {
             <section class="hero">
                 <h2>{"Hi, I'm Mate Kopaliani"}</h2>
                 <p class="hero-copy">
-                    {"Computer Science student and software engineer (at least trying :). building back-end systems, \
+                    {"Computer Science graduate and software engineer. building back-end systems, \
                     AI tools, developer tooling, and low-level stuff"}
                 </p>
                 <div class="hero-actions">
@@ -23,30 +23,113 @@ pub fn readme() -> Html {
                     <div class="card-label">{"Profile"}</div>
                     <h2>{"About"}</h2>
                     <p>
-                        {"I enjoy building reliable services, terminal-centered workflows, \
+                        {"I'm 20 years old and I enjoy building reliable services, terminal-centered workflows, \
                         system design experiments, and practical AI/ML projects."}
-                    </p>
-                    <p>
-                        {"Currently working as a Software Engineer at Collision Vision, with \
-                        previous back-end work around OCR, document processing, and translation."}
                     </p>
                     <div class="quick-links">
                         <a href="https://www.linkedin.com/in/mate-kopaliani-8838a7277" target="_blank">{"LinkedIn"}</a>
                         <a href="mailto:matekopaliani12@gmail.com">{"Email"}</a>
                     </div>
                 </article>
+            </section>
 
-                <article class="info-card docs-card">
-                    <div class="card-label">{"Notes"}</div>
-                    <h2>{"Focus Areas"}</h2>
-                    <ul>
-                        <li>{"Distributed systems and system architecture"}</li>
-                        <li>{"Math, AI/ML, and retrieval systems"}</li>
-                        <li>{"Linux, terminals, and developer experience"}</li>
-                        <li>{"Hardware-adjacent and low-level programming"}</li>
-                    </ul>
-                </article>
+            <section class="resume-section" aria-label="Background">
+                <div class="section-heading">
+                    <h2>{"Experience"}</h2>
+                </div>
 
+                <div class="resume-list">
+                    <article class="resume-entry">
+                        <div class="resume-entry__meta">
+                            <span class="resume-entry__title">{"Software Engineer"}</span>
+                            <span class="resume-entry__org">
+                                <a href="https://www.cvcertified.com/" target="_blank" rel="noopener noreferrer">{"Collision Vision"}</a>
+                            </span>
+                        </div>
+                        <p class="resume-entry__summary">
+                            {"Working on back-end systems and production software with a focus on reliability, practical tooling, and real-world product constraints."}
+                        </p>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="resume-entry__meta">
+                            <span class="resume-entry__title">{"Back-end Engineering Intern"}</span>
+                            <span class="resume-entry__org">
+                                <a href="https://api24.ge" target="_blank" rel="noopener noreferrer">{"api24.ge"}</a>
+                            </span>
+                        </div>
+                        <p class="resume-entry__summary">
+                            {"Built systems around OCR, document processing, and translation workflows."}
+                        </p>
+                    </article>
+
+                    <article class="resume-entry">
+                        <div class="resume-entry__meta">
+                            <span class="resume-entry__title">{"Linear Algebra Student Tutor"}</span>
+                            <span class="resume-entry__org">{"Kutaisi International University"}</span>
+                        </div>
+                        <p class="resume-entry__summary">
+                            {"Held weekly meetings with peer students, reviewed previous-week material, and helped reinforce core linear algebra topics."}
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="resume-section" aria-label="Education">
+                <div class="section-heading">
+                    <h2>{"Education"}</h2>
+                </div>
+
+                <div class="resume-list">
+                    <article class="resume-entry">
+                        <div class="resume-entry__meta">
+                            <span class="resume-entry__title">{"B.S. in Computer Science, Minor in Mathematics"}</span>
+                            <span class="resume-entry__org">
+                                <a href="https://kiu.edu.ge" target="_blank" rel="noopener noreferrer">{"Kutaisi International University"}</a>
+                            </span>
+                        </div>
+                        <p class="resume-entry__summary">
+                            {"Graduated with a 3.6/4.0 GPA and an average score of 93/100."}
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="resume-section" aria-label="Bachelor Thesis">
+                <div class="section-heading">
+                    <h2>{"Bachelor Thesis"}</h2>
+                </div>
+
+                <div class="resume-list">
+                    <article class="resume-entry">
+                        <div class="resume-entry__meta">
+                            <span class="resume-entry__title">{"Floating Point Unit"}</span>
+                            <span class="resume-entry__org">{"Rated 99/100"}</span>
+                        </div>
+                        <p class="resume-entry__summary">
+                            {"Bachelor thesis, co-authored with Zura Kajaia, focused on designing and implementing an IEEE 754 floating-point arithmetic unit. Supervisors: "}
+                            <a
+                                href="https://research.com/u/wolfgang-j-paul"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {"Wolfgang J. Paul"}
+                            </a>
+                            {" and "}
+                            <a
+                                href="https://www.linkedin.com/in/waltertichy/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {"Walter Tichy"}
+                            </a>
+                            {"."}
+                        </p>
+                        <div class="quick-links">
+                            <a href="/thesis.pdf" download="thesis.pdf">{"Download thesis"}</a>
+                        </div>
+                    </article>
+                </div>
             </section>
 
             <section class="library-section">
@@ -60,40 +143,31 @@ pub fn readme() -> Html {
 
                     <Link<Route> classes="project-row" to={Route::Project { name: "floating_point_unit".to_string() }}>
                         <span class="project-name">{"Floating Point Unit"}</span>
-                        <span>{"SystemVerilog"}</span>
                         <span>{"IEEE 754 floating-point arithmetic unit"}</span>
                     </Link<Route>>
 
                     <Link<Route> classes="project-row" to={Route::Project { name: "vortexnote".to_string() }}>
                         <span class="project-name">{"VortexNote"}</span>
-                        <span>{"Rust / Go / Python / Svelte"}</span>
-                        <span class="project-desc-with-url">
-                            <span>{"File management platform with AI-powered document search"}</span>
-                            <span class="project-url">{"vortexnote.com"}</span>
-                        </span>
+                        <span>{"File management platform with AI-powered document search"}</span>
                     </Link<Route>>
 
                     <Link<Route> classes="project-row" to={Route::Project { name: "llm_debate".to_string() }}>
                         <span class="project-name">{"LLM Debate"}</span>
-                        <span>{"Python"}</span>
                         <span>{"Multi-agent debate system for better reasoning"}</span>
                     </Link<Route>>
 
                     <Link<Route> classes="project-row" to={Route::Project { name: "ragtrace".to_string() }}>
                         <span class="project-name">{"RAGTrace"}</span>
-                        <span>{"Python / Jupyter"}</span>
                         <span>{"Different RAG approach analysis visualization and diagnostics"}</span>
                     </Link<Route>>
 
                     <Link<Route> classes="project-row" to={Route::Project { name: "watchclean".to_string() }}>
                         <span class="project-name">{"watchclean.tv"}</span>
-                        <span>{"Go"}</span>
                         <span>{"Local media collection manager"}</span>
                     </Link<Route>>
 
                     <Link<Route> classes="project-row" to={Route::Project { name: "only_vim".to_string() }}>
                         <span class="project-name">{"OnlyVim"}</span>
-                        <span>{"Lua / Neovim"}</span>
                         <span>{"Minimal Neovim distribution"}</span>
                     </Link<Route>>
 

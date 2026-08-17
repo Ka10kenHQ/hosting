@@ -101,6 +101,53 @@
     color: var(--link);
 }
 
+.resume-section {
+    margin: 3rem 0 0;
+}
+
+.resume-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.resume-entry {
+    padding: 0 0 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.resume-entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.resume-entry__meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.35rem;
+}
+
+.resume-entry__title {
+    color: var(--strong);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.resume-entry__org {
+    color: var(--subtle);
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+}
+
+.resume-entry__summary {
+    margin: 0;
+    color: var(--subtle);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 /* ─── Library / Projects section ─── */
 .library-section {
     margin-top: 3rem;
@@ -139,33 +186,13 @@
 .project-name {
     color: var(--strong);
     font-weight: 600;
-    min-width: 10ch;
+    min-width: 14ch;
 }
 .project-row:hover .project-name {
     color: var(--link);
 }
 .project-row > span:nth-child(2) {
     color: var(--subtle);
-    font-size: 0.85rem;
-    font-family: var(--font-mono);
-    min-width: 12ch;
-}
-.project-desc-with-url {
-    display: inline;
-    color: var(--subtle);
-}
-.project-desc-with-url > span:first-child {
-    color: var(--subtle);
-}
-.project-url {
-    display: inline-block;
-    padding: 1px 6px;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    font-size: 0.75rem;
-    color: var(--subtle);
-    font-family: var(--font-mono);
-    margin-left: 6px;
 }
 
 /* ─── Individual Project Page ─── */
@@ -174,7 +201,7 @@
     padding: 2rem 0;
 }
 .project-hero {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding: 0;
     border: none;
     background: none;
@@ -218,6 +245,14 @@
     flex-wrap: wrap;
     gap: 4px;
 }
+.project-section__label {
+    color: var(--subtle);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
 .project-switcher__link {
     padding: 2px 10px;
     border: 1px solid var(--border);
@@ -237,40 +272,18 @@
     color: var(--link);
 }
 
-/* Gallery */
-.project-gallery {
-    margin: 1.5rem 0;
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-}
-.gallery-item {
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    background: var(--main-bg);
-}
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 /* Project sections */
 .project-section {
-    margin: 1.5rem 0;
+    margin: 0;
     padding: 0;
     border: none;
     background: none;
     box-shadow: none;
 }
-.project-section h3 {
-    color: var(--strong);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 1.5rem 0 0.5rem;
+.project-section--lead {
+    padding-bottom: 1.75rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
 }
 .project-description {
     font-size: 0.95rem;
@@ -278,11 +291,14 @@
     color: var(--subtle);
     margin: 0;
 }
+.project-details-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) minmax(0, 240px) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
 
 /* Tech badges */
-.tech-stack {
-    margin-top: 0.5rem;
-}
 .tech-badges {
     display: flex;
     flex-wrap: wrap;
@@ -321,8 +337,9 @@
 
 /* GitHub CTA */
 .github-cta {
-    display: inline-block;
-    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
     padding: 6px 16px;
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -333,6 +350,26 @@
 .github-cta:hover {
     border-color: var(--link);
     text-decoration: none;
+}
+
+.thesis-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.thesis-viewer-section {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--main-bg);
+}
+
+.thesis-viewer {
+    display: block;
+    width: 100%;
+    min-height: 78vh;
+    border: 0;
 }
 
 /* ─── Responsive ─── */
@@ -350,8 +387,11 @@
     .project-row > span:nth-child(2) {
         min-width: auto;
     }
-    .gallery-grid {
+    .project-details-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
-
+    .thesis-viewer {
+        min-height: 68vh;
+    }
 }

@@ -21,9 +21,6 @@ pub fn only_vim() -> Html
                 "Sane defaults out of the box".to_string(),
             ]}
             github_url="https://github.com/Ka10kenHQ/OnlyVim"
-            images={vec![
-                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/onlyvim.png".to_string(),
-            ]}
         />
     }
 }

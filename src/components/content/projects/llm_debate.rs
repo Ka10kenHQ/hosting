@@ -24,10 +24,6 @@ pub fn llm_debate() -> Html
                 "Reduces hallucinations".to_string(),
             ]}
             github_url="https://github.com/Ka10ken1/llm-debate"
-            images={vec![
-                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/detabe_arch.png".to_string(),
-                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/detabe_message_arch.png".to_string(),
-            ]}
         />
     }
 }

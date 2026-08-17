@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      (function () {
+        var redirectTo =
+          location.pathname + location.search + location.hash;
+        sessionStorage.setItem("spa_redirect", redirectTo);
+        location.replace("/hosting/");
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -10,14 +10,10 @@ pub struct ProjectPageProps {
     pub tools: Vec<String>,
     pub features: Vec<String>,
     pub github_url: String,
-
-    #[prop_or_default]
-    pub images: Vec<String>,
 }
 
 #[function_component(ProjectPage)]
 pub fn project_page(props: &ProjectPageProps) -> Html {
-    let has_images = !props.images.is_empty();
     let projects = [
         ("floating_point_unit", "Floating Point Unit"),
         ("vortexnote", "VortexNote"),
@@ -51,38 +47,21 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
                 </div>
             </nav>
 
-            {if has_images {
-                html! {
-                    <section class="project-gallery">
-                        <div class="gallery-grid">
-                            {props.images.iter().enumerate().map(|(i, img)| {
-                                let loading = if i == 0 { "eager" } else { "lazy" };
-                                let fetchpriority = if i == 0 { "high" } else { "low" };
-
-                                html! {
-                                    <div class="gallery-item" key={i}>
-                                        <img
-                                            src={img.clone()}
-                                            alt={format!("{} screenshot {}", props.title, i + 1)}
-                                            loading={loading}
-                                            decoding="async"
-                                            fetchpriority={fetchpriority}
-                                            height="100px"
-                                        />
-                                    </div>
-                                }
-                            }).collect::<Html>()}
-                        </div>
-                    </section>
-                }
-            } else {
-                html! {}
-            }}
-
-            <section class="project-section">
+            <section class="project-section project-section--lead">
+                <div class="project-section__label">{"Overview"}</div>
                 <p class="project-description">{&props.description}</p>
-                <div class="tech-stack">
-                    <h3>{"Tools"}</h3>
+            </section>
+
+            <section class="project-details-grid">
+                <section class="project-section">
+                    <div class="project-section__label">{"Repository"}</div>
+                    <a href={props.github_url.clone()} target="_blank" class="github-cta" rel="noopener noreferrer">
+                        {"View on GitHub"}
+                    </a>
+                </section>
+
+                <section class="project-section">
+                    <div class="project-section__label">{"Tools"}</div>
                     <div class="tech-badges">
                         {props.tools.iter().map(|tech| {
                             html! {
@@ -90,26 +69,22 @@ pub fn project_page(props: &ProjectPageProps) -> Html {
                             }
                         }).collect::<Html>()}
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="project-section">
-                <h3>{"Features"}</h3>
-                <ul class="feature-list">
-                    {props.features.iter().map(|feature| {
-                        html! {
-                            <li class="feature-item">
-                                <span class="feature-bullet">{"→"}</span>
-                                <span>{feature}</span>
-                            </li>
-                        }
-                    }).collect::<Html>()}
-                </ul>
+                <section class="project-section">
+                    <div class="project-section__label">{"Features"}</div>
+                    <ul class="feature-list">
+                        {props.features.iter().map(|feature| {
+                            html! {
+                                <li class="feature-item">
+                                    <span class="feature-bullet">{"→"}</span>
+                                    <span>{feature}</span>
+                                </li>
+                            }
+                        }).collect::<Html>()}
+                    </ul>
+                </section>
             </section>
-            <a href={props.github_url.clone()} target="_blank" class="github-cta">
-                // <span class="github-icon">{"⚡"}</span>
-                {"View on GitHub"}
-            </a>
         </div>
     }
 }

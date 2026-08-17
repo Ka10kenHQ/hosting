@@ -1,2 +1,8 @@
 [[assets]]
 file = "static/CV.pdf" 
+
+[[assets]]
+file = "assets/thesis.pdf"
+
+[[assets]]
+file = "static/404.html"

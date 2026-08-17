@@ -27,9 +27,6 @@ pub fn vortexnote() -> Html
                 "Asynchronous background processing with RabbitMQ".to_string(),
             ]}
             github_url="https://github.com/vortex-mk"
-            images={vec![
-                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/dashboard.png".to_string(),
-            ]}
         />
     }
 }

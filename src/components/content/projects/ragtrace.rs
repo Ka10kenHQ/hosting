@@ -26,9 +26,6 @@ pub fn ragtrace() -> Html
                 "Answer tracing & evidence analysis".to_string()
             ]}
             github_url="https://github.com/Ka10ken1/RAGTrace"
-            images={vec![
-                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/f1_combined.png".to_string(),
-            ]}
         />
     }
 }

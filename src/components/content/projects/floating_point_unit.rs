@@ -23,9 +23,6 @@ pub fn floating_point_unit() -> Html
                 "Synthesizable for FPGA and ASIC".to_string(),
             ]}
             github_url="https://github.com/Ka10kenHQ/FloatingPointUnit"
-            images={vec![
-                "https://raw.githubusercontent.com/Ka10kenHQ/hosting/main/assets/images/floatingpointunit.png".to_string(),
-            ]}
         />
     }
 }

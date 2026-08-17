@@ -6,6 +6,7 @@ use crate::components::{
             watchclean::Watchclean,
         },
         readme::Readme,
+        thesis::Thesis,
     },
     page::Page,
 };
@@ -25,6 +26,8 @@ pub enum Route
     Blog { id: String },
     #[at("/hosting/project/:name")]
     Project { name: String },
+    #[at("/hosting/thesis")]
+    Thesis,
     #[not_found]
     #[at("/hosting/404")]
     NotFound,
@@ -37,6 +40,8 @@ pub fn switch(route: Route) -> Html
         Route::Blog { id } => html! { <Page children={String::from(id)} /> },
 
         Route::Home | Route::Readme | Route::HomeBase => html! { <Page> <Readme /> </Page> },
+
+        Route::Thesis => html! { <Page> <Thesis /> </Page> },
 
         Route::Project { name } => match name.as_str() {
             "floating_point_unit" => html! { <Page> <FloatingPointUnit/> </Page> },
