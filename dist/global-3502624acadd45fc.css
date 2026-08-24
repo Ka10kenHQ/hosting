@@ -2,6 +2,25 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Comic Code";
+    src: url("/Comic-Code-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select,
+code,
+pre {
+    font-family: "Comic Code", monospace !important;
+}
+
 :root {
     --main-fg: #000;
     --main-bg: #fff;
@@ -12,9 +31,9 @@
     --code-bg: #eee;
     --accent: #0066d6;
 
-    --font-sans: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui",
-        "helvetica neue", helvetica, Ubuntu, roboto, noto, arial, sans-serif;
-    --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    --font-sans: "Comic Code", sans-serif;
+    --font-mono: "Comic Code", monospace;
+
     --max-width: 65rem;
     --header-height: auto;
 }
