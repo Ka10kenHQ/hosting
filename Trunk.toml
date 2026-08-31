@@ -1,3 +1,7 @@
+[[copy]]
+source = "static"
+dest = "."
+
 [[assets]]
 file = "static/CV.pdf" 
 
@@ -6,3 +10,10 @@ file = "assets/thesis.pdf"
 
 [[assets]]
 file = "static/404.html"
+
+[[assets]]
+file = "static/fonts/Comic-Code-Medium.otf"
+
+[build]
+target = "index.html"
+dist = "dist"
