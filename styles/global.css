@@ -31,8 +31,8 @@ pre {
     --code-bg: #eee;
     --accent: #0066d6;
 
-    --font-sans: "Comic Code", sans-serif;
-    --font-mono: "Comic Code", monospace;
+    --font-sans: "Comic Code";
+    --font-mono: "Comic Code";
 
     --max-width: 65rem;
     --header-height: auto;
