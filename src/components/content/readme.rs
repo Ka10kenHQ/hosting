@@ -126,7 +126,7 @@ pub fn readme() -> Html {
                             {"."}
                         </p>
                         <div class="quick-links">
-                            <a href="/thesis.pdf" download="thesis.pdf">{"Download thesis"}</a>
+                            <a href="/hosting/thesis.pdf" download="thesis.pdf">{"Download thesis"}</a>
                         </div>
                     </article>
                 </div>
