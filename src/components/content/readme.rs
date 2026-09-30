@@ -10,7 +10,7 @@ pub fn readme() -> Html {
             <section class="hero">
                 <h2>{"Hi, I'm Mate Kopaliani"}</h2>
                 <p class="hero-copy">
-                    {"Computer Science graduate and software engineer. building back-end systems, \
+                    {"Computer Science graduate and software engineer (give or take :). building back-end systems, \
                     AI tools, developer tooling, and low-level stuff"}
                 </p>
                 <div class="hero-actions">
@@ -23,7 +23,7 @@ pub fn readme() -> Html {
                     <div class="card-label">{"Profile"}</div>
                     <h2>{"About"}</h2>
                     <p>
-                        {"I'm 20 years old and I enjoy building reliable services, terminal-centered workflows, \
+                        {"I'm 20 years old and I enjoy building terminal-centered workflows, \
                         system design experiments, and practical AI/ML projects."}
                     </p>
                     <div class="quick-links">
@@ -47,7 +47,7 @@ pub fn readme() -> Html {
                             </span>
                         </div>
                         <p class="resume-entry__summary">
-                            {"Working on back-end systems and production software with a focus on reliability, practical tooling, and real-world product constraints."}
+                            {"Working on back-end systems and production software with a focus on practical tooling, and real-world product constraints."}
                         </p>
                     </article>
 
