@@ -66,7 +66,9 @@ pub fn readme() -> Html {
                     <article class="resume-entry">
                         <div class="resume-entry__meta">
                             <span class="resume-entry__title">{"Linear Algebra Student Tutor"}</span>
-                            <span class="resume-entry__org">{"Kutaisi International University"}</span>
+                            <span class="resume-entry__org">
+                                <a href="https://kiu.edu.ge" target="_blank" rel="noopener noreferrer">{"Kutaisi International University"}</a>
+                            </span>
                         </div>
                         <p class="resume-entry__summary">
                             {"Held weekly meetings with peer students, reviewed previous-week material, and helped reinforce core linear algebra topics."}
